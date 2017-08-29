@@ -25,6 +25,30 @@ class App extends React.Component {
     }
   }
 
+  componentWillMount() {
+    console.log('componentWillMount');
+    const jsx = `const App = (props) => {
+  var myStyle = {
+    backgroundColor: '#000',
+    height: 10
+  }
+  return (
+    <div style={myStyle}>
+      <a href="#"
+        notrendered="x"
+        onClick={update}>
+        {/* this is a comment */}
+        this is a text
+        {i > 1 ? 'More than one' : 'one'}
+        {i > 1 && 'More than one'}
+      </a>
+    </div>
+  )
+}`;
+    this.setState({input: jsx});
+    // this.update.bind(this);
+  }
+
   render() {
     return (
       <div>

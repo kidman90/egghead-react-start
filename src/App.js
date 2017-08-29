@@ -46,7 +46,11 @@ class App extends React.Component {
   )
 }`;
     this.setState({input: jsx});
-    // this.update.bind(this);
+    this.update({
+      target: {
+        value: jsx,
+      },
+    });
   }
 
   render() {
